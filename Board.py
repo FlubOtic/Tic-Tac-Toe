@@ -26,20 +26,19 @@ class Board:
 
         
     def horizontal_check(self, location, xo):
-        empty1 = False
-        empty2 = False
+        empty = [False, False]  
         consecutive = 1
         for i in range(2):
-            if -1 < location[0] + 1 + i < 3 and not empty1:
+            if -1 < location[0] + 1 + i < 3 and not empty[0]:
                 if self.block[location[0] + 1 + i][location[1]] == xo:
                     consecutive += 1
                 else:
-                    empty1 = True
-            if -1 < location[0] - 1 - i < 3 and not empty2:
+                    empty[0] = True
+            if -1 < location[0] - 1 - i < 3 and not empty[1]:
                 if self.block[location[0] - 1 - i][location[1]] == xo:
                     consecutive += 1
                 else:
-                    empty2 = True 
+                    empty[1] = True 
         if consecutive >= 3:
             return True
         else:
@@ -47,20 +46,19 @@ class Board:
 
 
     def vertical_check(self, location, xo):
-        empty1 = False
-        empty2 = False        
+        empty = [False, False]   
         consecutive = 1
         for i in range(2):
-            if -1 < location[1] + 1 + i < 3 and not empty1:
+            if -1 < location[1] + 1 + i < 3 and not empty[0]:
                 if self.block[location[0]][location[1] + 1 + i] == xo:
                     consecutive += 1
                 else:
-                    empty1 = True
-            if -1 < location[1] - 1 - i < 3 and not empty2:
+                    empty[0] = True
+            if -1 < location[1] - 1 - i < 3 and not empty[1]:
                 if self.block[location[0]][location[1] - 1 - i] == xo:
                     consecutive += 1
                 else:
-                    empty2 = True                
+                    empty[1] = True                
         if consecutive >= 3:
             return True
         else:
@@ -68,20 +66,19 @@ class Board:
             
     
     def forward_diagonal_check(self, location, xo):
-        empty1 = False
-        empty2 = False   
+        empty = [False, False]   
         consecutive = 1
         for i in range(2):
-            if -1 < location[0] + 1 + i < 3 and -1 < location[1] + 1 + i < 3 and not empty1:
+            if -1 < location[0] + 1 + i < 3 and -1 < location[1] + 1 + i < 3 and not empty[0]:
                 if self.block[location[0] + 1 + i][location[1] + 1 + i] == xo:
                     consecutive += 1
                 else:
-                    empty1 = True
-            if -1 < location[0] - 1 - i < 3 and -1 < location[1] - 1 - i < 3 and not empty2:
+                    empty[0] = True
+            if -1 < location[0] - 1 - i < 3 and -1 < location[1] - 1 - i < 3 and not empty[1]:
                 if self.block[location[0] - 1 - i][location[1] - 1 - i] == xo:
                     consecutive += 1
                 else:
-                    empty2 = True                
+                    empty[1] = True                
         if consecutive >= 3:
             return True
         else: 
@@ -89,20 +86,19 @@ class Board:
             
         
     def backward_diagonal_check(self, location, xo):
-        empty1 = False
-        empty2 = False 
+        empty = [False, False]  
         consecutive = 1
         for i in range(2):
-            if -1 < location[0] - 1 - i < 3 and -1 < location[1] + 1 + i < 3 and not empty1:
+            if -1 < location[0] - 1 - i < 3 and -1 < location[1] + 1 + i < 3 and not empty[0]:
                 if self.block[location[0] - 1 - i][location[1] + 1 + i] == xo:
                     consecutive += 1
                 else:
-                    empty1 = True
-            if -1 < location[0] + 1 + i < 3 and -1 < location[1] - 1 - i < 3 and not empty2:
+                    empty[0] = True
+            if -1 < location[0] + 1 + i < 3 and -1 < location[1] - 1 - i < 3 and not empty[1]:
                 if self.block[location[0] + 1 + i][location[1] - 1 - i] == xo:
                     consecutive += 1
                 else:
-                    empty2 = True                    
+                    empty[1] = True                    
         if consecutive >= 3:
             return True
         else:
