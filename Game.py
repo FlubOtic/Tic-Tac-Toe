@@ -70,8 +70,6 @@ def GameLoop():
 
     while not crash:
 
-        pygame.display.update()
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 crash = True
@@ -104,8 +102,10 @@ def GameLoop():
             else:
                 draw_text(screen, "Draw", 50, (SCREEN_WIDTH/2, SCREEN_HEIGHT/2 - 50))
             draw_text(screen, "Press Enter To Play Again", 40, (SCREEN_WIDTH/2, SCREEN_HEIGHT/2 + 25))
+        
+        if not crash:
+            pygame.display.update()
 
 
 if __name__ == "__main__":
     GameLoop()
-
