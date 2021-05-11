@@ -1,9 +1,12 @@
 # Tic-Tac-Toe
  A simple Tic Tac Toe GUI
 
+# Screenshots
+Start
+
 ![](Images/Github%20Images/Start.png)
 
-X Goes First
+X
 
 ![](Images/Github%20Images/First.png)
 
