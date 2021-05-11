@@ -16,6 +16,14 @@ class Board:
         else:
             return False
 
+
+    def draw(self):
+        for i in range(3):
+            for j in range(3):
+                if self.block[i][j] == "Empty":
+                    return False
+        return True
+
         
     def horizontal_check(self, location, xo):
         empty1 = False
@@ -36,7 +44,6 @@ class Board:
             return True
         else:
             return self.vertical_check(location, xo)  
-
 
 
     def vertical_check(self, location, xo):
